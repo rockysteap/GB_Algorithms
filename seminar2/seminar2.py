@@ -65,6 +65,7 @@ def sort(array):
 
 
 # Алгоритм: Сортировка подсчетом
+""" Не поддерживаются отрицательные значения """
 def counting_sort(sp):
     max_item = max(sp)
     lst = [0 for _ in range(max_item + 1)]
@@ -125,7 +126,7 @@ print(my_list) if len(my_list) <= 20 else print(f'Кол-во элементов
 my_list_sorted = running_time(quick_sort, my_list)
 print(my_list_sorted) if len(my_list_sorted) <= 20 else None
 
-text_separator(' Быстрая сортировка (вариант из stackoverflow) ')
+text_separator(' Быстрая сортировка (вариант из stack overflow) ')
 my_list = list_gen(-100_000, 100_000, 1_000_000)
 print(my_list) if len(my_list) <= 20 else print(f'Кол-во элементов {len(my_list):,}')
 my_list_sorted = running_time(sort, my_list)
@@ -138,7 +139,7 @@ my_list_sorted = running_time(sorted, my_list)
 print(my_list_sorted) if len(my_list_sorted) <= 20 else None
 
 text_separator(' Сортировка подсчетом ')
-sp = list_gen(-100_000, 100_000, 1_000_000)
+sp = list_gen(1, 200_000, 1_000_000)
 print(sp) if len(sp) <= 20 else print(f'Кол-во элементов {len(sp):,}')
 sp2 = running_time(counting_sort, sp)
 print(sp2) if len(sp2) <= 20 else None
